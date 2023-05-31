@@ -259,6 +259,7 @@
               console.log(user.reloadUserInfo.email);
   
               alert(`${user.reloadUserInfo.email} logged in`)
+              window.location.href="index.html";
             })
             .catch(function (error) {
               // Firebase will use this to alert of its errors
