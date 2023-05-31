@@ -60,6 +60,7 @@
      // User registered successfully
      console.log("User registered:", userCredential.user);
      alert(`${userCredential.user.reloadUserInfo.email} registered succesfully`);
+     window.location.href="index.html";
      // Perform any additional actions after successful registration
    })
    .catch((error) => {
