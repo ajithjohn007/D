@@ -80,18 +80,18 @@
     <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
       <div class="card border-0 shadow rounded-3 my-5">
         <div class="card-body p-4 p-sm-5">
-          <h5 class="card-title text-center mb-5 fw-light fs-5">Register</h5>
+          <h5 class="card-title text-center mb-5 fw-light fs-5">Sign In</h5>
           <form>
             <div class="form-floating mb-3">
               <input type="name" class="form-control" id="floatingInput" placeholder="Full Name">
               <label for="floatingInput">Full Name</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+              <input type="email" class="form-control" id="email" placeholder="name@example.com">
               <label for="floatingInput">Email address</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+              <input type="password" class="form-control" id="password" placeholder="Password">
               <label for="floatingPassword">Password</label>
             </div>
 
@@ -102,7 +102,7 @@
               </label>
             </div>
             <div class="d-grid">
-              <a href="index.html" class="btn btn-primary btn-login text-uppercase fw-bold">Register</a>
+              <button onclick="register()" class="btn btn-primary btn-login text-uppercase fw-bold">Register</button>
               <a href="login.html" class="row justify-content-center py-2">Already registered? Sign in!</a>
             </div>
 
@@ -200,8 +200,12 @@
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js"></script>
 
     <!-- Template Javascript -->
+    <script src="js/index.js" type="module"></script>
     <script src="js/main.js"></script>
 </body>
 
