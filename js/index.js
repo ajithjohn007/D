@@ -146,9 +146,15 @@ function validate_field(field) {
 }
 document.getElementById("logout").addEventListener("click", function(event) {
   event.preventDefault();
-  firebase.auth().signOut().then(() => {
-            window.location.href="login.html";
-          }, function (error) {
-            // An error happened.
-          });
+ 
+  const signOut = () => {
+ return firebase.auth().signOut()
+  .then(() => {
+   setSession();
+  })
+  .catch((error) => {
+   setSession();
+  });
+}
+ window.location.href="login.html";
  } )
