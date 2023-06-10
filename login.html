@@ -223,6 +223,17 @@
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
+        
+        onAuthStateChanged(auth, async (user)=>{
+    if(user){
+        //do your logged in user crap here
+        window.location.href="alreadyloggedin.html";
+    }else{
+        window.location.href="login.html";
+    }
+})
+        
+        
         document
           .getElementById("loginForm")
           .addEventListener("submit", function (event) {
@@ -243,14 +254,7 @@
           // }
             
             
-          onAuthStateChanged(auth, async (user)=>{
-    if(user){
-        //do your logged in user crap here
-        window.location.href="alreadyloggedin.html";
-    }else{
-        window.location.href="login.html";
-    }
-})
+          
             
             
             
