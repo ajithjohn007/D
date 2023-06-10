@@ -167,8 +167,18 @@
 
 
 
-                            <script>
-
+                            <script type="module">
+                                import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+                                ////////////////////
+        import {
+          getAuth,
+          createUserWithEmailAndPassword,
+          signInWithEmailAndPassword,
+          onAuthStateChanged,
+          signOut,
+        } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-analytics.js";
+                                //////////////////////////////////
                                 var firebaseConfig = {
                                     apiKey: "AIzaSyClMy-RrxkE3mo1I7EtTtq39aDDqBvGz1g",
                                     authDomain: "doanyjob.firebaseapp.com",
@@ -247,6 +257,33 @@
                                         });
                                 }
                                 fetchAllData();
+                                ///////////////////////////
+                                const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        
+         
+        
+        
+        document
+          .getElementById("checklogin")
+          .addEventListener("click", function (event) {
+            event.preventDefault();
+  
+            checklogin();
+          });
+         
+         
+         
+         
+        function checklogin() {
+          onAuthStateChanged(auth, (user) => {
+  if (user) {
+    window.location.href="notify.html";
+  } else {
+    window.location.href="login.html";
+  }
+});
+            //////////////////////////////
 
                             </script>
 
@@ -497,6 +534,7 @@
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+                <!--
      <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
@@ -554,6 +592,7 @@
             
         }
       </script>
+-->
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script src="js/script.js"></script>
