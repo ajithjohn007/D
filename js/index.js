@@ -144,3 +144,9 @@ function validate_field(field) {
     return true
   }
 }
+document.getElementById("logout").addEventListener("click", function(event) {
+  event.preventDefault();
+  auth.signOut().then(() => {
+      window.location.href="login.html";
+  } 
+ } )
