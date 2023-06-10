@@ -241,7 +241,19 @@
           //   return
           //   // Don't continue running the code
           // }
-  
+            
+            
+          onAuthStateChanged(auth, async (user)=>{
+    if(user){
+        //do your logged in user crap here
+        window.location.href="alreadyloggedin.html";
+    }else{
+        window.location.href="login.html";
+    }
+})
+            
+            
+            
           signInWithEmailAndPassword(auth, email, password)
             .then(function () {
               // Declare user variable
@@ -258,6 +270,7 @@
   
               alert(error_message);
             });
+            
         }
       </script>
     <script src="js/main.js"></script>
