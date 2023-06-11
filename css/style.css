@@ -393,3 +393,13 @@
     padding-right: 0;
     border-right: none;
 }
+.alert{
+    width: 100%;
+    background: var(--primary);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 900;
+    display: none;
+}
