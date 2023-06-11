@@ -73,7 +73,7 @@
                     </div>
                     <a href="login.html" class="nav-item nav-link">Login/SignUp</a>
                 </div>
-                <a  class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block" href="job_post.html" id="checklogin">Post A Job<i class="fa fa-arrow-right ms-3"></i></a>
+                <a  class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block"  id="postajob">Post A Job<i class="fa fa-arrow-right ms-3"></i></a>
             </div>
         </nav>
         <!-- Navbar End -->
@@ -91,7 +91,7 @@
                                     <h1 class="display-3 text-white animated slideInDown mb-4">With DAJ you can do AnyJob  AnyTime  Anywhere</h1>
 
                                     <a href="#requests" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Search A Job</a>
-                                    <a href="#input" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Post A Job</a>
+                                    <a class="btn btn-secondary py-md-3 px-md-5 animated slideInRight" id="postajob1">Post A Job</a>
                                 </div>
                             </div>
                         </div>
@@ -516,6 +516,47 @@
            
             
         }
+         
+         
+         
+         document
+          .getElementById("postajob")
+          .addEventListener("click", function (event) {
+            event.preventDefault();
+  
+            checkloginforjob();
+          });
+         
+         
+         
+         
+         document
+          .getElementById("postajob1")
+          .addEventListener("click", function (event) {
+            event.preventDefault();
+  
+            checkloginforjob();
+          });
+         
+         function checkloginforjob() {
+          onAuthStateChanged(auth, (user) => {
+  if (user) {
+    window.location.href="job_post.html";
+  } else {
+    window.location.href="login.html";
+  }
+});
+           
+            
+        }
+         
+         
+       
+         
+         
+         
+         
+         
       </script>
 
     <!-- Template Javascript -->
