@@ -128,7 +128,36 @@
 
 
 
-                            <script>
+                            <script type="module" src="js/index.js">
+                                
+                                
+                                import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+                            import {
+                              getAuth,
+                              createUserWithEmailAndPassword,
+                              signInWithEmailAndPassword,
+                              onAuthStateChanged,
+                              signOut,
+                            } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+                            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-analytics.js";
+
+                                var firebaseConfig = {
+                                    apiKey: "AIzaSyClMy-RrxkE3mo1I7EtTtq39aDDqBvGz1g",
+                                    authDomain: "doanyjob.firebaseapp.com",
+                                    databaseURL: "https://doanyjob-default-rtdb.firebaseio.com",
+                                    projectId: "doanyjob",
+                                    storageBucket: "doanyjob.appspot.com",
+                                    messagingSenderId: "925346635514",
+                                    appId: "1:925346635514:web:8f7bc38fd1b424130ab343",
+                                    measurementId: "G-MPZLXPJE20"
+                                };
+
+                                const app =  firebase.initializeApp(firebaseConfig);
+                                const auth = getAuth(app);
+                                
+                                
+                                
+                                
                                 
                                 var firebaseConfig = {
                                     apiKey: "AIzaSyClMy-RrxkE3mo1I7EtTtq39aDDqBvGz1g",
@@ -141,7 +170,7 @@
                                     measurementId: "G-MPZLXPJE20"
                                 };
 
-                                firebase.initializeApp(firebaseConfig);
+                                
 
                                 function fetchAllData() {
 
