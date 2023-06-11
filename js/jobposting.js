@@ -13,7 +13,14 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const jopapplication_db = firebase.database().ref("jobpostingform");
 
+document.getElementById('jobposting').addEventListener('submit', submitform);
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
 
+today = mm + '/' + dd + '/' + yyyy;
+document.write(today);
 
 function submitform(e) {
   e.preventDefault();
@@ -24,7 +31,7 @@ function submitform(e) {
   const contact = getElementVal("contact no");
   const duration = getElementVal("duration");
   const payable = getElementVal("payable");
-  
+  const date = getElementVal("date");
   const jobdescription = getElementVal("jobDescription");
 
   console.log(name, jobtype, location, contact, duration, payable, date, jobdescription);
@@ -50,7 +57,8 @@ function saveMessages(name, jobtype, location, contact, duration, payable, date,
     contact: contact,
     duration: duration,
     payable: payable,
-     // Store current timestamp as JavaScript timestamp
+    date: date,
+    p_date: today, // Store current timestamp as JavaScript timestamp
     jobdescription: jobdescription,
   });
 }
