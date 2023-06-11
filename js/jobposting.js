@@ -24,7 +24,7 @@ function submitform(e) {
   const contact = getElementVal("contact no");
   const duration = getElementVal("duration");
   const payable = getElementVal("payable");
-  const date = getElementVal("date");
+  
   const jobdescription = getElementVal("jobDescription");
 
   console.log(name, jobtype, location, contact, duration, payable, date, jobdescription);
@@ -50,8 +50,7 @@ function saveMessages(name, jobtype, location, contact, duration, payable, date,
     contact: contact,
     duration: duration,
     payable: payable,
-    date: date,
-    p_date: today, // Store current timestamp as JavaScript timestamp
+     // Store current timestamp as JavaScript timestamp
     jobdescription: jobdescription,
   });
 }
