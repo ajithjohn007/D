@@ -73,7 +73,7 @@
                     </div>
                     <a href="login.html" class="nav-item nav-link">Login/SignUp</a>
                 </div>
-                <a  class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block" href="job_post.html" id="checklogin1">Post A Job<i class="fa fa-arrow-right ms-3"></i></a>
+                <a  class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block" id="checklogin">Post A Job<i class="fa fa-arrow-right ms-3"></i></a>
             </div>
         </nav>
         <!-- Navbar End -->
@@ -91,7 +91,7 @@
                                     <h1 class="display-3 text-white animated slideInDown mb-4">With DAJ you can do AnyJob  AnyTime  Anywhere</h1>
 
                                     <a href="#requests" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Search A Job</a>
-                                    <a class="btn btn-secondary py-md-3 px-md-5 animated slideInRight" id="postajob1">Post A Job</a>
+                                    <a class="btn btn-secondary py-md-3 px-md-5 animated slideInRight" id="checklogin1">Post A Job</a>
                                 </div>
                             </div>
                         </div>
@@ -180,7 +180,7 @@
                                                             <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
                                                                 <div class="d-flex mb-3">
                                                                     <a class="btn btn-light btn-square me-3" href=""><i class="far fa-heart text-primary"></i></a>
-                                                                    <a class="btn btn-primary"  id="checklogin" onclick="checklogin()">Apply Now</a>
+                                                                    <a class="btn btn-primary"  id="checklogin">Apply Now</a>
                                                                 </div>
                                                                 <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>Posted: 02 Sept, 2023</small>
                                                             </div>
@@ -507,16 +507,18 @@
           .addEventListener("click", function (event) {
             event.preventDefault();
   
-            checklogin1();
+            checklogin();
           });
          
          
          
         function checklogin() {
           onAuthStateChanged(auth, (user) => {
-  if (!user) {
+  if (user) {
+    window.location.href="job_post.html";
+  } else {
     window.location.href="login.html";
-  } 
+  }
 });   
         }
          
