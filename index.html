@@ -73,7 +73,7 @@
                     </div>
                     <a href="login.html" class="nav-item nav-link">Login/SignUp</a>
                 </div>
-                <a  class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block" id="checklogin">Post A Job<i class="fa fa-arrow-right ms-3"></i></a>
+                <a  class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block" id="checklogin1">Post A Job<i class="fa fa-arrow-right ms-3"></i></a>
             </div>
         </nav>
         <!-- Navbar End -->
@@ -502,7 +502,22 @@
             checklogin();
           });
          
-         
+         document
+          .getElementById("checklogin1")
+          .addEventListener("click", function (event) {
+            event.preventDefault();
+  
+            checklogin1();
+          });
+         function checklogin1() {
+          onAuthStateChanged(auth, (user) => {
+  if (user) {
+    window.location.href="job_post.html";
+  } else {
+    window.location.href="login.html";
+  }
+});   
+        }
          
          
         function checklogin() {
@@ -512,53 +527,15 @@
   } else {
     window.location.href="login.html";
   }
-});
-           
-            
+});   
         }
          
          
          
-         document
-          .getElementById("postajob")
-          .addEventListener("click", function (event) {
-            event.preventDefault();
-  
-            checkloginforjob();
-          });
-         
-         function checkloginforjob() {
-          onAuthStateChanged(auth, (user) => {
-  if (user) {
-    window.location.href="job_post.html";
-  } else {
-    window.location.href="login.html";
-  }
-});
-           
-            
-        }
          
          
-         document
-          .getElementById("postajob1")
-          .addEventListener("click", function (event) {
-            event.preventDefault();
-  
-            checkloginforjob1();
-          });
          
-         function checkloginforjob1() {
-          onAuthStateChanged(auth, (user) => {
-  if (user) {
-    window.location.href="job_post.html";
-  } else {
-    window.location.href="login.html";
-  }
-});
-           
-            
-        }
+         
          
          
        
