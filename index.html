@@ -514,11 +514,9 @@
          
         function checklogin() {
           onAuthStateChanged(auth, (user) => {
-  if (user) {
-    //
-  } else {
+  if (!user) {
     window.location.href="login.html";
-  }
+  } 
 });   
         }
          
