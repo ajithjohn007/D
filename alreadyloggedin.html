@@ -69,7 +69,7 @@
                     </div>
                     <a href="login.html" class="nav-item nav-link">Login/SignUp</a>
                 </div>
-                <a href="index.html" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Post A Job<i class="fa fa-arrow-right ms-3"></i></a>
+                <a class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block" id="checklogin">Post A Job<i class="fa fa-arrow-right ms-3"></i></a>
             </div>
         </nav>
         <!-- Navbar End -->
@@ -233,6 +233,27 @@
           });
            
             
+        }
+        document
+          .getElementById("checklogin")
+          .addEventListener("click", function (event) {
+            event.preventDefault();
+  
+            checklogin();
+          });
+         
+         
+         
+         
+         
+        function checklogin() {
+          onAuthStateChanged(auth, (user) => {
+  if (user) {
+    window.location.href="job_post.html";
+  } else {
+    window.location.href="login.html";
+  }
+});   
         }
       </script>
 
