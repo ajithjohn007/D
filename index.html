@@ -128,17 +128,9 @@
 
 
 
-                            <script type="module">
+                            <script>
                                 
-                                import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
-        import {
-          getAuth,
-          createUserWithEmailAndPassword,
-          signInWithEmailAndPassword,
-          onAuthStateChanged,
-          signOut,
-        } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-analytics.js";
+                               
                                 
                                 
                                 
@@ -156,8 +148,8 @@
                                     measurementId: "G-MPZLXPJE20"
                                 };
 
-                                const app = firebase.initializeApp(firebaseConfig);
-                                const auth = getAuth(app);
+                                firebase.initializeApp(firebaseConfig);
+                                
                                 
 
                                 function fetchAllData() {
@@ -221,30 +213,7 @@
          
         
         
-        document
-          .getElementById("checklogin")
-          .addEventListener("click", function (event) {
-            event.preventDefault();
-  
-            checklogin();
-          });
-         
-         
-         
-         
-         
-         
-         
-         
-        function checklogin() {
-          onAuthStateChanged(auth, (user) => {
-  if (user) {
-    window.location.href="job_post.html";
-  } else {
-    window.location.href="login.html";
-  }
-});   
-        }
+        
                                                     
                                                     
 
